@@ -1,0 +1,48 @@
+@inherits LayoutComponentBase
+
+<div class="page @(isSidebarCollapsed ? "sidebar-collapsed" : string.Empty)">
+    <div class="sidebar">
+        <NavMenu IsSidebarCollapsed="isSidebarCollapsed" OnSidebarToggle="ToggleSidebar" />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <div class="top-row-title">@CurrentPageTitle</div>
+            <div class="top-row-status">
+                <div class="user-menu">
+                    <button type="button"
+                            class="user-menu-trigger"
+                            aria-label="開啟使用者選單">
+                        <span class="user-menu-icon" aria-hidden="true">
+                            <MaterialIcon Theme="@MaterialIcon.Themes.Outlined" Kind="account_circle" />
+                        </span>
+                        <span class="user-menu-text">
+                            <span class="user-menu-name">@CurrentUserDisplayName</span>
+                            @if (CurrentUserIsAdmin)
+                            {
+                                <span class="user-menu-badge">管理者</span>
+                            }
+                        </span>
+                        <span class="user-menu-caret" aria-hidden="true">
+                            <MaterialIcon Theme="@MaterialIcon.Themes.Outlined" Kind="expand_more" />
+                        </span>
+                    </button>
+
+                    <div class="user-menu-dropdown" role="menu" aria-label="使用者操作">
+                        <a class="user-menu-item" href="/Auths/Logout" role="menuitem">登出</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+<div id="blazor-error-ui" data-nosnippet>
+    An unhandled error has occurred.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss">🗙</span>
+</div>

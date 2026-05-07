@@ -22,6 +22,7 @@ public partial class BackendDBContext : DbContext
     public virtual DbSet<Project> Project { get; set; }
     public virtual DbSet<ProjectFile> ProjectFile { get; set; }
     public virtual DbSet<RoleView> RoleView { get; set; }
+    public virtual DbSet<Test> Test { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

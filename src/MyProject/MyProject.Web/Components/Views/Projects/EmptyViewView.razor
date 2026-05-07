@@ -1,0 +1,41 @@
+@if (string.IsNullOrEmpty(RoleMessage) == false)
+{
+    <div class="alert alert-danger" role="alert">
+        @RoleMessage
+    </div>
+}
+else
+{
+    <div>
+        <div class="meeting-view-toolbar">
+            <div class="meeting-view-toolbar-left">
+
+            </div>
+            <div class="meeting-view-toolbar-right">
+               
+            </div>
+        </div>
+        <div class="meeting-view-table-wrap">
+            
+        </div>
+    </div>
+
+    <Modal Title="@modalTitle"
+           Class="meeting-view-modal"
+           @bind-Visible="@modalVisible"
+           Keyboard="true"
+           OnOk="OnModalOKHandleAsync"
+           OnCancel="OnModalCancelHandleAsync">
+        <div>
+            <EditForm Model="@CurrentRecord" Context="editContext" @onkeydown="OnModalKeyDownAsync">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <InputWatcher EditContextActionChanged="OnEditContestChanged" />
+
+                
+            </EditForm>
+        </div>
+    </Modal>
+}
+
+<FormModalHelper />

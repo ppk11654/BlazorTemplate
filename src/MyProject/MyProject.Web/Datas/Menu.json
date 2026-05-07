@@ -27,6 +27,12 @@
         "name": "會議記錄",
         "icon": "event",
         "url": "/meeting"
+      },
+      {
+        "id": 24,
+        "name": "空白樣版",
+        "icon": "note_add",
+        "url": "/empty"
       }
     ]
   },
@@ -44,7 +50,7 @@
       {
         "id": 32,
         "name": "角色管理",
-        "icon": "shield_person",
+        "icon": "admin_panel_settings",
         "url": "/roleviews"
       }
     ]

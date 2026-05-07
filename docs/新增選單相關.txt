@@ -1,0 +1,5 @@
+D:\Projects-Git\BlazorTemplate\src\MyProject\MyProject.Web\Datas\Menu.json
+
+D:\Projects-Git\BlazorTemplate\src\MyProject\MyProject.Share\Helpers\MagicObjectHelper.cs
+
+D:\Projects-Git\BlazorTemplate\src\MyProject\MyProject.Business\Services\Other\RolePermissionService.cs

@@ -1,0 +1,14 @@
+git config --global user.name "ppk11654"
+git config --global user.email "ppk11654@gmail.com"
+git add .
+git commit -m "Initial commit"
+git status
+
+先到 GitHub 網站建立一個新的空倉庫，名稱可以也叫 BlazorTemplate。建立時不要勾 README、.gitignore、license，因為你本機已經有提交了。
+
+git remote add origin https://github.com/ppk11654/BlazorTemplate.git
+git branch -M main
+git push -u origin main
+
+先確認有沒有連成功，再補一行
+git remote -v

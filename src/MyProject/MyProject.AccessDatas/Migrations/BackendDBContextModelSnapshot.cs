@@ -344,6 +344,31 @@ namespace MyProject.AccessDatas.Migrations
                     b.ToTable("RoleView");
                 });
 
+            modelBuilder.Entity("MyProject.AccessDatas.Models.Test", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Owner")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Test");
+                });
+
             modelBuilder.Entity("MyProject.AccessDatas.Models.Meeting", b =>
                 {
                     b.HasOne("MyProject.AccessDatas.Models.Project", "Project")

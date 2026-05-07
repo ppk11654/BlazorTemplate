@@ -1,8 +1,9 @@
-# 第一次 Migration 
+# 第一次 Migration 在 1.	在 Visual Studio 中，開啟 工具 > NuGet 套件管理員 > 套件管理員主控台
 
 ```
 Add-Migration add-meeting -Project MyProject.AccessDatas -StartupProject MyProject.Web 
 Add-Migration Add-Status -Project MyProject.AccessDatas -StartupProject MyProject.Web 
+Add-Migration Add-Test -Project MyProject.AccessDatas -StartupProject MyProject.Web 
 ```
 
 * -Context <String>	
@@ -27,6 +28,10 @@ Add-Migration Add-Status -Project MyProject.AccessDatas -StartupProject MyProjec
 Update-Database -Context BackendDBContext -StartupProject MyProject.Web -Project MyProject.AccessDatas
 ```
 
+```
+dotnet ef database update -Context BackendDBContext -StartupProject MyProject.Web -Project MyProject.AccessDatas
+```
+
 # 套用 Migration 
 
 ```
@@ -34,7 +39,7 @@ Add-Migration AddAthleteExamine -Context BackendDBContext -Project MyProject.Acc
 ```
 
 ```
-dotnet ef migrations add AddAthleteExamine --project MyProject.AccessDatas --startup-project MyProject.Web 
+dotnet ef migrations add AddTest --project MyProject.AccessDatas --startup-project MyProject.Web 
 ```
 
 
@@ -48,9 +53,6 @@ Remove-Migration -Context BackendDBContext -Project MyProject.AccessDatas -Start
 dotnet ef migrations remove --project MyProject.AccessDatas --startup-project MyProject.Web
 ```
 
-# 套用移轉
+Data Source=C:\\temp\\MyProject\\DB\\BackendDB.db
 
-```
-Script-Migration -Project MyProject.AccessDatas -StartupProject MyProject.Web
-```
 
